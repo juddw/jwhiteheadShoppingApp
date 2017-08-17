@@ -1,0 +1,65 @@
+﻿@model IEnumerable<jwhiteheadShoppingApp.Models.CodeFirst.Item>
+
+
+@if (User.IsInRole("Admin"))
+{
+    @Html.ActionLink("Create New", "Create")
+}
+
+<div class="col-md-12">
+    <p class="itemName" style="color:grey">8 items</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-sm-6">
+                <a href="@Url.Action("Details", "Items", new {id = item.Id})">
+                    <img src="@item.MediaURL">
+                    <p class="itemName">@item.Name</p>
+                    <p class="itemPrice">$@item.Price</p>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+@*<div class="col-md-3 col-sm-6">
+        <img src="~/assets/images/m2.jpg" />
+        <p class="itemName">CFW-1100</p>
+        <p class="itemPrice">$1600.00</p>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <img src="~/assets/images/m3.jpg" />
+        <p class="itemName">CFW-550</p>
+        <p class="itemPrice">$1500.00</p>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <img src="~/assets/images/m5.jpg" />
+        <p class="itemName">CFW-1200</p>
+        <p class="itemPrice">$1650.00</p>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <img src="~/assets/images/m6.jpg" />
+            <p class="itemName">CFW-850</p>
+            <p class="itemPrice">$1550.00</p>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <img src="~/assets/images/m7.jpg" />
+            <p class="itemName">CFW-2500</p>
+            <p class="itemPrice">$950.00</p>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <img src="~/assets/images/m8.jpg" />
+            <p class="itemName">CFW-650</p>
+            <p class="itemPrice">$950.00</p>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <img src="~/assets/images/m9.jpg" />
+            <p class="itemName">CFW-5500</p>
+            <p class="itemPrice">$15000.00</p>
+        </div>
+    </div>*@

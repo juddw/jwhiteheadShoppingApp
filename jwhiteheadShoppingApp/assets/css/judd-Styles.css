@@ -1,0 +1,302 @@
+﻿
+#testMeButtons {
+    font-size: 8px !important; /*use this to make sure it affects the element*/ 
+}
+
+#myNav {
+    overflow: auto;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    padding-left: 10px;
+    position: relative;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #f1f1f1;
+}
+
+#closeBttn {
+    font-size: 25px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+nav i {
+    cursor: pointer;
+}
+
+#subMenuCollection {
+    display: none;
+    margin-left: 15px;
+}
+
+    #subMenuCollection a {
+        color: brown;
+    }
+
+        #subMenuCollection a:hover {
+            background-color: grey;
+            color: white;
+            text-decoration: none;
+        }
+
+
+.myImageContainer {
+    position: absolute;
+    left: 190px;
+    top: 0px;
+}
+
+#myBarIcon {
+    font-size: 25px;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+    #myBarIcon:hover {
+        background-color: gainsboro;
+        cursor: pointer;
+    }
+
+#positionCartSearchIcons {
+    float: right;
+    margin-right: 20px;
+}
+
+#myCartIcon {
+    font-size: 25px;
+    display: inline-block;
+}
+
+    #myCartIcon:hover {
+        cursor: pointer;
+    }
+
+#mySearchIcon {
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+    #mySearchIcon:hover {
+        cursor: pointer;
+    }
+
+.myIcons {
+    font-size: 12px;
+}
+
+.mySocialIcons {
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 0px;
+}
+
+.itemName {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.itemPrice {
+    font-size: 14px;
+    font-weight: bold;
+    color: grey;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.navMenuHeadings {
+    font-size: 24px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+    .navMenuHeadings a {
+        display: block;
+        text-decoration: none;
+        color: black;
+    }
+
+        .navMenuHeadings a:hover {
+            text-decoration: none;
+        }
+
+.myCustomNavItem a {
+    display: block;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .myCustomNavItem a:hover {
+        background-color: grey;
+        color: white;
+        text-decoration: none;
+    }
+
+#hookMessage {
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    z-index: 10;
+    font-size: 48px;
+    font-family: Arial, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+#hookMessageSub {
+    position: absolute;
+    left: 45px;
+    top: 65px;
+    z-index: 10;
+    font-size: 20px;
+    font-family: Arial, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+#shopNowButton {
+    position: absolute;
+    left: 45px;
+    top: 150px;
+    z-index: 10;
+    font-size: 14px;
+    font-family: Arial, Geneva, Tahoma, sans-serif;
+    background-color: brown;
+    border-style: none;
+    padding: 10px 20px 10px 20px;
+    color: white;
+}
+
+    #shopNowButton:hover {
+        background-color: white;
+        color: black;
+    }
+
+.subscribeBlock {
+    background-color: black;
+    color: white;
+    padding: 10px 20px 20px 20px;
+    height: 250px;
+    width: 100%;
+}
+
+    .subscribeBlock input {
+        padding: 5px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .subscribeBlock p {
+        padding-top: 10px;
+    }
+
+    .subscribeBlock button {
+        font-family: Arial;
+        background-color: red;
+        display: block;
+        border-style: none;
+        padding: 10px;
+        color: white;
+        width: 100px;
+    }
+
+        .subscribeBlock button:hover {
+            background-color: antiquewhite;
+            color: red;
+            cursor: pointer;
+        }
+
+.container .contactBlock {
+    margin-left: 0px;
+}
+
+.contactBlock {
+    background-color: #d5d5d5;
+    padding: 50px 10px 20px 10px;
+    color: black;
+    width: 100%;
+}
+
+    .contactBlock h4 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+.contact p {
+    font-size: 12px;
+}
+
+.contact {
+    display: block;
+    text-align: center;
+}
+
+    .contact input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .contact button {
+        font-family: Arial;
+        display: block;
+        border-style: none;
+        margin-top: 10px;
+        padding: 5px 20px 5px 20px;
+        background-color: black;
+        color: white;
+        width: 100%;
+    }
+
+        .contact button:hover {
+            color: white;
+            background-color: grey;
+        }
+
+.about {
+    text-align: center;
+}
+
+    .about a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    .about p {
+        font-size: 12px;
+    }
+
+    .about a:hover {
+        color: brown;
+    }
+
+.contactBlock .store {
+    padding-left: 60px;
+}
+
+.store {
+    min-width: 100px;
+}
+
+    .store p {
+        font-size: 12px;
+    }
+
+#footer {
+    margin-top: 50px;
+}

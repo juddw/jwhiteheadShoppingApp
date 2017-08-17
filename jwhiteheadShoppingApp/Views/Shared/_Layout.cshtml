@@ -1,0 +1,143 @@
+﻿<!--<!DOCTYPE html>-->
+<html>
+<head>
+    <title>ECommerce App</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link href="~/assets/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/assets/css/judd-Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!--side navbar starts-->
+    <nav id="myNav">
+        <div id="closeBttn" onclick="closeMenu()">
+            <i class="fa fa-remove"></i>
+        </div>
+        <div class="navMenuHeadings">LOGO</div>
+        <div class="myCustomNavItem">
+            <a href="#">CFW Series</a>
+            <a href="#">CFAW Series</a>
+            <a href="javascript:void(0);" onclick="showSubCollections()">Collection <i class="fa fa-caret-down"></i></a>
+            <div id="subMenuCollection">
+                <a href="#">2016</a>
+                <a href="#">2015</a>
+                <a href="#">2014</a>
+            </div>
+            <a href="#">Straps</a>
+            <a href="#">Parts</a>
+            <a href="#">Tools</a>
+            <a href="#">Accessories</a>
+        </div>
+        <div class="navMenuHeadings">
+            <a href="#">Contact</a>
+            <a href="#">Newsletter</a>
+            <a href="#">Subscribe</a>
+        </div>
+    </nav>
+    <!--side navbar ends-->
+    <!--start images container-->
+    <div class="container myImageContainer">
+        <div class="row">
+            <div id="myBarIcon" onclick="openMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div id="positionCartSearchIcons">
+                <div id="myCartIcon">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+                <div id="mySearchIcon">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+            </div>
+            <div class="col-md-3">
+                @Html.Partial("_LoginPartial") @*displays login and log off cshtml page on top of*@
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 id="hookMessage">New Arrivals</h3>
+                <h3 id="hookMessageSub">COLLECTION 2016</h3>
+                <button id="shopNowButton">SHOP NOW</button>
+                <img src="~/assets/images/3.jpg" style="min-width:400px" />
+            </div>
+        </div>
+        @RenderBody()
+        <!--start subscribe block-->
+        <div class="subscribeBlock">
+            <h1>Subscribe</h1>
+            <p>To get special offers and <span style="color:red">VIP</span> treatment:</p>
+            <input placeholder="Enter email" />
+            <button>Subscribe</button>
+        </div>
+        <!--end subscribe block-->
+        <!--start contact info-->
+        <div class="row contactBlock">
+            <div class="col-xs-4 contact">
+                <h4>Contact</h4>
+                <p>Questions? Go ahead.</p>
+                <input placeholder="Name" />
+                <input placeholder="Email" />
+                <input placeholder="Subject" />
+                <input placeholder="Message" />
+                <button>Send</button>
+            </div>
+            <div class="col-xs-4 about">
+                <h4>About</h4>
+                <p><a href="#">About us</a></p>
+                <p><a href="#">We're hiring</a></p>
+                <p><a href="#">Support</a></p>
+                <p><a href="#">Find store</a></p>
+                <p><a href="#">Shipment</a></p>
+                <p><a href="#">Payment</a></p>
+                <p><a href="#">Gift card</a></p>
+                <p><a href="#">Return</a></p>
+                <p><a href="#">Help</a></p>
+            </div>
+            <div class="col-xs-4 store">
+                <h4>Store</h4>
+                <p><i class="fa fa-map-marker myIcons"></i>&nbsp;&nbsp;Company Name</p>
+                <p><i class="fa fa-phone myIcons"></i>&nbsp;&nbsp;0044123123</p>
+                <p><i class="fa fa-envelope myIcons"></i>&nbsp;&nbsp;myemail@email.com</p>
+                <h4>We accept</h4>
+                <p><i class="fa fa-cc-amex myIcons"></i>&nbsp;&nbsp;Amex</p>
+                <p><i class="fa fa-credit-card myIcons"></i>&nbsp;&nbsp;Credit Card</p>
+                <i class="fa fa-facebook-official mySocialIcons"></i>
+                <i class="fa fa-instagram mySocialIcons"></i>
+                <i class="fa fa-snapchat mySocialIcons"></i>
+                <i class="fa fa-pinterest mySocialIcons"></i>
+                <i class="fa fa-twitter mySocialIcons"></i>
+                <i class="fa fa-linkedin mySocialIcons"></i>
+            </div>
+        </div>
+        <!--end contact info-->
+        <!--footer starts-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <footer>
+                        <center>
+                            <div>
+                                <p id="footer">Powered by <a href="https://www.coderfoundry.com">CoderFoundry</a> &copy;Copyright CoderFoundery</p>
+                            </div>
+                        </center>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <!--footer ends-->
+    </div>
+    <!--end images container-->
+
+    <script src="~/assets/scripts/myJavaScript.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
