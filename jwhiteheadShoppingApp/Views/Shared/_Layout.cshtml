@@ -46,6 +46,10 @@
             <div id="positionCartSearchIcons">
                 <div id="myCartIcon">
                     <i class="fa fa-shopping-cart"></i>
+                    @if (Request.IsAuthenticated)
+                    {
+                        @ViewBag.CartItems.Count
+                    }
                 </div>
                 <div id="mySearchIcon">
                     <i class="fa fa-search"></i>
@@ -53,18 +57,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-9">
-            </div>
-            <div class="col-md-3">
-                @Html.Partial("_LoginPartial") @*displays login and log off cshtml page on top of*@
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-12">
-                <h3 id="hookMessage">New Arrivals</h3>
-                <h3 id="hookMessageSub">COLLECTION 2016</h3>
-                <button id="shopNowButton">SHOP NOW</button>
-                <img src="~/assets/images/3.jpg" style="min-width:400px" />
+                @Html.Partial("_LoginPartial") @*displays login and log off cshtml page on top of*@
             </div>
         </div>
         @RenderBody()
@@ -78,7 +72,7 @@
         <!--end subscribe block-->
         <!--start contact info-->
         <div class="row contactBlock">
-            <div class="col-xs-4 contact">
+            <div class="col-sm-4 col-xs-12 contact">
                 <h4>Contact</h4>
                 <p>Questions? Go ahead.</p>
                 <input placeholder="Name" />
@@ -87,32 +81,37 @@
                 <input placeholder="Message" />
                 <button>Send</button>
             </div>
-            <div class="col-xs-4 about">
-                <h4>About</h4>
-                <p><a href="#">About us</a></p>
-                <p><a href="#">We're hiring</a></p>
-                <p><a href="#">Support</a></p>
-                <p><a href="#">Find store</a></p>
-                <p><a href="#">Shipment</a></p>
-                <p><a href="#">Payment</a></p>
-                <p><a href="#">Gift card</a></p>
-                <p><a href="#">Return</a></p>
-                <p><a href="#">Help</a></p>
+            <div class="col-sm-4 col-xs-6">
+                <div class="about">
+                    <h4>About</h4>
+                    <p><a href="#">About us</a></p>
+                    <p><a href="#">We're hiring</a></p>
+                    <p><a href="#">Support</a></p>
+                    <p><a href="#">Find store</a></p>
+                    <p><a href="#">Shipment</a></p>
+                    <p><a href="#">Payment</a></p>
+                    <p><a href="#">Gift card</a></p>
+                    <p><a href="#">Return</a></p>
+                    <p><a href="#">Help</a></p>
+                </div>
             </div>
-            <div class="col-xs-4 store">
-                <h4>Store</h4>
-                <p><i class="fa fa-map-marker myIcons"></i>&nbsp;&nbsp;Company Name</p>
-                <p><i class="fa fa-phone myIcons"></i>&nbsp;&nbsp;0044123123</p>
-                <p><i class="fa fa-envelope myIcons"></i>&nbsp;&nbsp;myemail@email.com</p>
-                <h4>We accept</h4>
-                <p><i class="fa fa-cc-amex myIcons"></i>&nbsp;&nbsp;Amex</p>
-                <p><i class="fa fa-credit-card myIcons"></i>&nbsp;&nbsp;Credit Card</p>
-                <i class="fa fa-facebook-official mySocialIcons"></i>
-                <i class="fa fa-instagram mySocialIcons"></i>
-                <i class="fa fa-snapchat mySocialIcons"></i>
-                <i class="fa fa-pinterest mySocialIcons"></i>
-                <i class="fa fa-twitter mySocialIcons"></i>
-                <i class="fa fa-linkedin mySocialIcons"></i>
+            <div class="col-sm-4 col-xs-6">
+                <div class="store">
+                    <h4>Store</h4>
+                    <p><i class="fa fa-map-marker myIcons"></i>&nbsp;&nbsp;Company Name</p>
+                    <p><i class="fa fa-phone myIcons"></i>&nbsp;&nbsp;0044123123</p>
+                    <p><i class="fa fa-envelope myIcons"></i>&nbsp;&nbsp;myemail@email.com</p>
+                    <br />
+                    <h4>We accept</h4>
+                    <p><i class="fa fa-cc-amex myIcons"></i>&nbsp;&nbsp;Amex</p>
+                    <p><i class="fa fa-credit-card myIcons"></i>&nbsp;&nbsp;Credit Card</p>
+                    <i class="fa fa-facebook-official mySocialIcons"></i>
+                    <i class="fa fa-instagram mySocialIcons"></i>
+                    <i class="fa fa-snapchat mySocialIcons"></i>
+                    <i class="fa fa-pinterest mySocialIcons"></i>
+                    <i class="fa fa-twitter mySocialIcons"></i>
+                    <i class="fa fa-linkedin mySocialIcons"></i>
+                </div>
             </div>
         </div>
         <!--end contact info-->
@@ -134,6 +133,7 @@
     </div>
     <!--end images container-->
 
+    <script src="~/assets/scripts/jquery-1.9.1.js"></script>
     <script src="~/assets/scripts/myJavaScript.js"></script>
 
     @RenderSection("scripts", required: false)

@@ -1,28 +1,59 @@
-﻿
-#testMeButtons {
-    font-size: 8px !important; /*use this to make sure it affects the element*/ 
-}
-
-#myNav {
+﻿#myNav {
     overflow: auto;
-    height: 100%;
+    height: auto;
     width: 200px;
     position: fixed;
     padding-left: 10px;
-    position: relative;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #f1f1f1;
+    background-color: #ededed;
+    z-index: 20;
 }
+
+.navMenuHeadings {
+    font-size: 24px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+    .navMenuHeadings a {
+        display: block;
+        text-decoration: none;
+        color: black;
+    }
+
+        .navMenuHeadings a:hover {
+            text-decoration: none;
+        }
+    /*only affects immediate children of this class*/
+    .navMenuHeadings > a:hover {
+        color: brown;
+    }
+
+.myCustomNavItem a {
+    display: block;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .myCustomNavItem a:hover {
+        background-color: brown;
+        color: white;
+        text-decoration: none;
+    }
 
 #closeBttn {
     font-size: 25px;
     text-align: right;
     margin-right: 10px;
 }
+
+    #closeBttn:hover {
+        cursor: pointer;
+        color: brown;
+    }
 
 nav i {
     cursor: pointer;
@@ -43,12 +74,24 @@ nav i {
             text-decoration: none;
         }
 
-
 .myImageContainer {
     position: absolute;
     left: 190px;
     top: 0px;
 }
+
+.surroundSmallImagesBox {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: white;
+}
+
+    .surroundSmallImagesBox img {
+        cursor: pointer;
+    }
 
 #myBarIcon {
     font-size: 25px;
@@ -58,9 +101,9 @@ nav i {
     text-align: center;
 }
 
-    #myBarIcon:hover {
-        background-color: gainsboro;
+    #myBarIcon:hover, #myCartIcon:hover, #mySearchIcon:hover {
         cursor: pointer;
+        color: brown;
     }
 
 #positionCartSearchIcons {
@@ -73,19 +116,11 @@ nav i {
     display: inline-block;
 }
 
-    #myCartIcon:hover {
-        cursor: pointer;
-    }
-
 #mySearchIcon {
     font-size: 25px;
     display: inline-block;
     margin-left: 20px;
 }
-
-    #mySearchIcon:hover {
-        cursor: pointer;
-    }
 
 .myIcons {
     font-size: 12px;
@@ -102,10 +137,25 @@ img {
     margin: 0px;
 }
 
+.surroundSmallImagesBox img {
+    border-style: solid;
+    border-color: white;
+    border-width: 6px;
+}
+
+    .surroundSmallImagesBox img:hover {
+        background-color: brown;
+        padding: 5px;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+    }
+
 .itemName {
     font-size: 14px;
     font-weight: bold;
     color: black;
+    padding-left: 5px;
 }
 
 .itemPrice {
@@ -114,39 +164,8 @@ img {
     color: grey;
     margin-top: -10px;
     margin-bottom: 20px;
+    padding-left: 5px;
 }
-
-.navMenuHeadings {
-    font-size: 24px;
-    font-family: "Segoe UI",Arial,sans-serif;
-    font-weight: 400;
-    margin: 10px 0;
-}
-
-    .navMenuHeadings a {
-        display: block;
-        text-decoration: none;
-        color: black;
-    }
-
-        .navMenuHeadings a:hover {
-            text-decoration: none;
-        }
-
-.myCustomNavItem a {
-    display: block;
-    color: black;
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-    .myCustomNavItem a:hover {
-        background-color: grey;
-        color: white;
-        text-decoration: none;
-    }
 
 #hookMessage {
     position: absolute;
@@ -245,6 +264,7 @@ img {
 .contact {
     display: block;
     text-align: center;
+    margin-bottom: 40px;
 }
 
     .contact input {
@@ -265,11 +285,13 @@ img {
 
         .contact button:hover {
             color: white;
-            background-color: grey;
+            background-color: #3d3d3d;
         }
 
 .about {
-    text-align: center;
+    width: 100%;
+    padding-left: 40%;
+    text-align: left;
 }
 
     .about a {
@@ -285,12 +307,10 @@ img {
         color: brown;
     }
 
-.contactBlock .store {
-    padding-left: 60px;
-}
-
 .store {
-    min-width: 100px;
+    width: 100%;
+    padding-left: 10%;
+    text-align: left;
 }
 
     .store p {

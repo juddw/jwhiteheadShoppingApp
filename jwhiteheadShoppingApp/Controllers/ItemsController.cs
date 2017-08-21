@@ -11,9 +11,8 @@ using jwhiteheadShoppingApp.Models.CodeFirst;
 
 namespace jwhiteheadShoppingApp.Controllers
 {
-    public class ItemsController : Controller
+    public class ItemsController : Universal
     {
-        private ApplicationDbContext db = new ApplicationDbContext(); // allows you to talk to database.
 
         // GET: Items
         public ActionResult Index() // get the Index page and display it.
@@ -119,6 +118,7 @@ namespace jwhiteheadShoppingApp.Controllers
             Item item = db.Items.Find(id);
             db.Items.Remove(item);
             db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 

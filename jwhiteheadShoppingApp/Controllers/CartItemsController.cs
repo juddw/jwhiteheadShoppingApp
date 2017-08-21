@@ -11,9 +11,8 @@ using jwhiteheadShoppingApp.Models.CodeFirst;
 
 namespace jwhiteheadShoppingApp.Controllers
 {
-    public class CartItemsController : Controller
+    public class CartItemsController : Universal
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: CartItems
         public ActionResult Index()
