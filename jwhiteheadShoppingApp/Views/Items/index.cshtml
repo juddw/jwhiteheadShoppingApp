@@ -8,7 +8,7 @@
             {
                 @Html.ActionLink("Create New Item", "Create")
             }
-            <p class="itemName" style="color:grey; margin-top:20px">8 items</p>
+            <p class="itemName" style="color:white; margin-top:20px">8 items</p>
         </div>
     </div>
 
@@ -18,9 +18,9 @@
             <div class="well col-md-3 col-sm-4 col-xs-6">
                 <a href="@Url.Action("Details", "Items", new {id = item.Id})">
                     <img src="@item.MediaURL">
-                    <p class="itemName">@item.Name</p>
-                    <p class="itemPrice">$@item.Price</p>
                 </a>
+                    <p class="itemName">@item.Name</p>
+                    <p class="itemPrice">$@item.Price</p>               
             </div>
         }
     </div>

@@ -264,6 +264,7 @@
     <Content Include="assets\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="assets\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="assets\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="assets\images\ManageSettings.jpg" />
     <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
     <Content Include="Scripts\tinymce\license.txt" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />

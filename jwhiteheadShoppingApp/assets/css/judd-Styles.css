@@ -29,6 +29,11 @@
         color: brown;
     }
 
+.paddingRightBttns {
+    padding-right: 20px;
+
+}
+
 .myCustomNavItem a {
     display: block;
     color: black;
@@ -45,9 +50,11 @@
     }
 
 #closeBttn {
+    width: 30px;
+    height: 30px;
     font-size: 25px;
-    text-align: right;
     margin-right: 10px;
+    float: right;
 }
 
     #closeBttn:hover {
@@ -81,17 +88,33 @@ nav i {
 }
 
 .surroundSmallImagesBox {
+    min-width: 400px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 0px;
+    border-top-width: 2px;
     border-color: black;
     padding-left: 30px;
     padding-right: 30px;
-    background-color: white;
+    background-color: black;
 }
 
     .surroundSmallImagesBox img {
         cursor: pointer;
     }
+
+    .surroundSmallImagesBox img {
+        border-style: solid;
+        border-color: white;
+        border-width: 6px;
+    }
+
+        .surroundSmallImagesBox img:hover {
+            background-color: brown;
+            padding: 5px;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+        }
 
 #myBarIcon {
     font-size: 25px;
@@ -111,15 +134,27 @@ nav i {
     margin-right: 20px;
 }
 
-#myCartIcon {
-    font-size: 25px;
-    display: inline-block;
-}
-
 #mySearchIcon {
     font-size: 25px;
     display: inline-block;
-    margin-left: 20px;
+    margin-right: 50px;
+    width: 100px;
+    border-style: solid;
+    border-width: 0px;
+    border-right-width: 2px;
+}
+
+#myCartIcon {
+    font-size: 25px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.cartCountStyle {
+    margin-left: 10px;
+    font-size: 25px;
+    color: black;
+    display: inline-block;
 }
 
 .myIcons {
@@ -136,20 +171,6 @@ img {
     height: auto;
     margin: 0px;
 }
-
-.surroundSmallImagesBox img {
-    border-style: solid;
-    border-color: white;
-    border-width: 6px;
-}
-
-    .surroundSmallImagesBox img:hover {
-        background-color: brown;
-        padding: 5px;
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
-    }
 
 .itemName {
     font-size: 14px;
@@ -200,11 +221,14 @@ img {
     border-style: none;
     padding: 10px 20px 10px 20px;
     color: white;
+    text-decoration: none;
 }
 
     #shopNowButton:hover {
         background-color: white;
         color: black;
+        cursor: pointer;
+        text-decoration: none;
     }
 
 .subscribeBlock {

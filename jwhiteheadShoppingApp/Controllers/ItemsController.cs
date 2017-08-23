@@ -17,7 +17,8 @@ namespace jwhiteheadShoppingApp.Controllers
         // GET: Items
         public ActionResult Index() // get the Index page and display it.
         {
-            return View(db.Items.ToList()); // sending list to the view
+            var itemsData = db.Items.ToList();
+            return View(itemsData); // sending list to the view
         }
 
         // GET: Items/Details/5

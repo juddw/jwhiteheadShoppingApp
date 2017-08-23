@@ -15,9 +15,9 @@
         <div id="closeBttn" onclick="closeMenu()">
             <i class="fa fa-remove"></i>
         </div>
-        <div class="navMenuHeadings">LOGO</div>
+        <div class="navMenuHeadings"><a href="@Url.Action("Index","Home")">LOGO</a></div>
         <div class="myCustomNavItem">
-            <a href="#">CFW Series</a>
+            <a href="@Url.Action("index","Items")">CFW Series</a>
             <a href="#">CFAW Series</a>
             <a href="javascript:void(0);" onclick="showSubCollections()">Collection <i class="fa fa-caret-down"></i></a>
             <div id="subMenuCollection">
@@ -40,27 +40,34 @@
     <!--start images container-->
     <div class="container myImageContainer">
         <div class="row">
-            <div id="myBarIcon" onclick="openMenu()">
-                <i class="fa fa-bars"></i>
-            </div>
-            <div id="positionCartSearchIcons">
-                <div id="myCartIcon">
-                    <i class="fa fa-shopping-cart"></i>
-                    @if (Request.IsAuthenticated)
-                    {
-                        @ViewBag.CartItems.Count
-                    }
-                </div>
-                <div id="mySearchIcon">
-                    <i class="fa fa-search"></i>
+            <div class="col-xs-12">
+                <div id="myBarIcon" onclick="openMenu()">
+                    <i class="fa fa-bars"></i>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 @Html.Partial("_LoginPartial") @*displays login and log off cshtml page on top of*@
+                <div id="positionCartSearchIcons">
+                    <div id="mySearchIcon">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div id="myCartIcon">
+                        <a href="@Url.Action("Index","Items")" data-toggle="tooltip" data-placement="top" title="shopping cart">
+                            <i class="fa fa-shopping-cart" style="color: black"></i>
+                        </a>
+                    </div>
+                    <div class="cartCountStyle">
+                        @if (Request.IsAuthenticated)
+                        {
+                            @ViewBag.CartItems.Count
+                        }
+                    </div>
+                </div>
             </div>
         </div>
+
         @RenderBody()
         <!--start subscribe block-->
         <div class="subscribeBlock">
@@ -135,9 +142,15 @@
 
     <script src="~/assets/scripts/jquery-1.9.1.js"></script>
     <script src="~/assets/scripts/myJavaScript.js"></script>
+    <script src="~/assets/scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/assets/scripts/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>
 </html>
-
-
