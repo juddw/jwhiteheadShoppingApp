@@ -4,23 +4,12 @@
 <div class="surroundSmallImagesBox">
     <div class="row">
         <div class="col-sm-12">
+            <p class="itemName" style="color:white; margin-top:20px; display: inline-block;">@Model.Count() items</p>
+
             @if (User.IsInRole("Admin"))
             {
-                <a href="@Url.Action("Create")" class="creatNewItemBttn">Create New Item</a>
-                @*@Html.ActionLink("Create New Item", "Create")*@
+                <a href="@Url.Action("Create")" class="myCustomBttn">Create New</a>
             }
-
-            @*@foreach (var item in Model)
-    {
-        @Url.Action("Details", "Items", new { itemCount = item.Id })
-        if (itemCount != null)
-        {
-            var itemCount += itemCount;
-        }
-
-    }*@
-
-            <p class="itemName" style="color:white; margin-top:20px">8 items</p>
         </div>
     </div>
 

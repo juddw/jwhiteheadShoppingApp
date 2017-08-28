@@ -171,21 +171,46 @@ nav i {
         color: brown;
     }
 
-.creatNewItemBttn {
-    background-color: white;
-    color: black;
+.myCheckOutBttn {
+    display: inline-block;
+    background-color: brown;
+    color: white;
     margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 15px;
     padding: 8px 15px;
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
+    border-color: brown;
+    float: right;
 }
 
-    .creatNewItemBttn:hover {
+    .myCheckOutBttn:hover {
         text-decoration: none;
-        background-color: brown;
-        border-color: brown;
-        color: white;
+        background-color: white;
+        color: black;
+    }
+
+.myCustomBttn {
+    display: inline-block;
+    background-color: brown;
+    color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 8px 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: brown;
+    float: right;
+}
+
+   .myCustomBttn:hover {
+        text-decoration: none;
+        background-color: white;
+        color: black;
     }
 
 #subMenuCollection {

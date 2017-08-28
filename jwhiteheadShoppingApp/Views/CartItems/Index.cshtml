@@ -4,7 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Cart Items</h2>
+<h2 style="display: inline-block">Cart Items</h2>
+
+<a href="@Url.Action("Index","OrderItem")" class="myCheckOutBttn">Check Out</a>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
@@ -23,7 +25,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Created)
         </th>
-        <th></th>
+        <th>
+            <p>Modify</p>
+        </th>
     </tr>
 
 @foreach (var item in Model) {
