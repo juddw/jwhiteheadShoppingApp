@@ -20,8 +20,9 @@ namespace jwhiteheadShoppingApp.Models
                 ViewBag.FirstName = user.FirstName;
                 ViewBag.LastName = user.LastName;
                 ViewBag.FullName = user.FullName;
-
-                ViewBag.CartItems = user.CartItems.ToList();
+                // c is just a variable. c is like a foreach loop setting we want the cartItems where the CustomerId == the current logged in user's id.
+                ViewBag.CartItems = db.CartItems.AsNoTracking().Where(c=>c.CustomerId == user.Id).ToList(); // must use AsNoTracking because Universal already has
+                // a connection open. This leaves no trace and does not affect the current open connection.
 
                 //ViewBag.ItemTypes = db.Itemtypes.AsNoTracking().OrderBy(testc => testc.TypeName).toList();
                 //ViewBag.CartItems = user.CartItems

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 using jwhiteheadShoppingApp.Models;
 using jwhiteheadShoppingApp.Models.CodeFirst;
 
@@ -49,10 +50,24 @@ namespace jwhiteheadShoppingApp.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CreationDate,UpdatedDate,Name,Price,MediaURL,Description")] Item item)
+        // Bind ensures the values are all entered
+        public ActionResult Create([Bind(Include = "Id,CreationDate,UpdatedDate,Name,Price,MediaURL,Description")] Item item, HttpPostedFileBase image)
         {
+            // Validation.
+            if (image != null && image.ContentLength > 0) // checking to make sure there is a file, and that the file has more than 0 bytes of information.
+            {
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                    ModelState.AddModelError("image", "Invalid Format."); // Don't need curly braces with only one line of code.
+            }
+
             if (ModelState.IsValid)
             {
+                var filePath = "/assets/images/"; // url path
+                var absPath = Server.MapPath("~" + filePath);  // physical file path
+                item.MediaURL = filePath + image.FileName; // path of the file
+                image.SaveAs(Path.Combine(absPath, image.FileName)); // saves
+                item.CreationDate = System.DateTime.Now;
                 db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -83,14 +98,35 @@ namespace jwhiteheadShoppingApp.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CreationDate,UpdatedDate,Name,Price,MediaURL,Description")] Item item)
+        public ActionResult Edit([Bind(Include = "Id,CreationDate,UpdatedDate,Name,Price,MediaURL,Description")] Item item, string mediaURL, HttpPostedFileBase image)
         {
+            // Validation.
+            if (image != null && image.ContentLength > 0) // checking to make sure there is a file, and that the file has more than 0 bytes of information.
+            {
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                    ModelState.AddModelError("image", "Invalid Format."); // Don't need curly braces with only one line of code.
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(item).State = EntityState.Modified;
+                if (image != null)
+                {
+                    var filePath = "/assets/images/"; // url path
+                    var absPath = Server.MapPath("~" + filePath);  // physical file path
+                    item.MediaURL = filePath + image.FileName; // path of the file
+                    image.SaveAs(Path.Combine(absPath, image.FileName)); // saves
+                }
+                else
+                {
+                    item.MediaURL = mediaURL;
+                }
+                item.UpdatedDate = System.DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(item);
         }
 
@@ -117,6 +153,8 @@ namespace jwhiteheadShoppingApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Item item = db.Items.Find(id);
+            var absPath = Server.MapPath("~" + item.MediaURL);  // physical file path
+            System.IO.File.Delete(absPath);
             db.Items.Remove(item);
             db.SaveChanges();
 

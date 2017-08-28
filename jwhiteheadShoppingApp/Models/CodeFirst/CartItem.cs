@@ -20,7 +20,11 @@ namespace jwhiteheadShoppingApp.Models.CodeFirst
         {
             get
             {
-                return Count * Item.Price;
+                if (Item != null)
+                {
+                    return Count * Item.Price;
+                }
+                return 0;
             }
         }
     }

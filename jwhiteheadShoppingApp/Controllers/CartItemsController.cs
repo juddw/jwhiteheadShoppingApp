@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using jwhiteheadShoppingApp.Models;
 using jwhiteheadShoppingApp.Models.CodeFirst;
+using Microsoft.AspNet.Identity;
 
 namespace jwhiteheadShoppingApp.Controllers
 {
@@ -15,9 +16,11 @@ namespace jwhiteheadShoppingApp.Controllers
     {
 
         // GET: CartItems
+        [Authorize] // redirects you to the login screen if not logged in.
         public ActionResult Index()
         {
-            return View(db.CartItems.ToList());
+            var user = db.Users.Find(User.Identity.GetUserId());
+            return View(user.CartItems.ToList());
         }
 
         // GET: CartItems/Details/5
@@ -36,26 +39,33 @@ namespace jwhiteheadShoppingApp.Controllers
         }
 
         // GET: CartItems/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: CartItems/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ItemId,CustomerId,Count,Created")] CartItem cartItem)
+        public ActionResult Create( int? itemId )
         {
-            if (ModelState.IsValid)
-            {
+            var user = db.Users.Find(User.Identity.GetUserId());
+
+            if(itemId != null || user != null)
+            {        
+                CartItem cartItem = new CartItem();
+                cartItem.ItemId = (int)itemId;
+                cartItem.CustomerId = user.Id;
+                cartItem.Count = 1;
+                cartItem.Created = DateTime.Now;
+
                 db.CartItems.Add(cartItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(cartItem);
+            return View();
         }
 
         // GET: CartItems/Edit/5

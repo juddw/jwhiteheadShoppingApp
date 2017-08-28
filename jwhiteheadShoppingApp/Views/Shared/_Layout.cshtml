@@ -12,10 +12,11 @@
 <body>
     <!--side navbar starts-->
     <nav id="myNav">
-        <div id="closeBttn" onclick="closeMenu()">
-            <i class="fa fa-remove"></i>
+        <div class="navHeaderColor">
+            <i class="fa fa-remove" id="closeBttn" onclick="closeMenu()"></i>
+            <a href="@Url.Action("Index","Home")" id="logo">LOGO</a>
         </div>
-        <div class="navMenuHeadings"><a href="@Url.Action("Index","Home")">LOGO</a></div>
+
         <div class="myCustomNavItem">
             <a href="@Url.Action("index","Items")">CFW Series</a>
             <a href="#">CFAW Series</a>
@@ -34,37 +35,39 @@
             <a href="#">Contact</a>
             <a href="#">Newsletter</a>
             <a href="#">Subscribe</a>
+            <br />
         </div>
     </nav>
     <!--side navbar ends-->
     <!--start images container-->
     <div class="container myImageContainer">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-2">
                 <div id="myBarIcon" onclick="openMenu()">
                     <i class="fa fa-bars"></i>
                 </div>
             </div>
+            <div class="col-xs-10">
+                <div class="mySearchTool">
+                    <input type="text" class="mySearchField" placeholder="Enter search item" />
+                        <div id="mySearchIcon"><i class="fa fa-search"></i></div>               
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
-                @Html.Partial("_LoginPartial") @*displays login and log off cshtml page on top of*@
-                <div id="positionCartSearchIcons">
-                    <div id="mySearchIcon">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <div id="myCartIcon">
-                        <a href="@Url.Action("Index","Items")" data-toggle="tooltip" data-placement="top" title="shopping cart">
-                            <i class="fa fa-shopping-cart" style="color: black"></i>
-                        </a>
-                    </div>
-                    <div class="cartCountStyle">
-                        @if (Request.IsAuthenticated)
-                        {
-                            @ViewBag.CartItems.Count
-                        }
-                    </div>
+            <div class="col-xs-4">
+                <a href="@Url.Action("Index","CartItems")">
+                    <i class="fa fa-shopping-cart" id="myCartIcon"></i>
+                </a>
+                <div class="cartCountStyle">
+                    @if (Request.IsAuthenticated)
+                    {
+                        @ViewBag.CartItems.Count <span>items</span>
+                    }
                 </div>
+            </div>
+            <div class="col-xs-8">
+                @Html.Partial("_LoginPartial") @*displays login and log off cshtml page on top of*@
             </div>
         </div>
 
@@ -144,12 +147,6 @@
     <script src="~/assets/scripts/myJavaScript.js"></script>
     <script src="~/assets/scripts/jquery-1.9.1.min.js"></script>
     <script src="~/assets/scripts/bootstrap.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 
     @RenderSection("scripts", required: false)
 </body>

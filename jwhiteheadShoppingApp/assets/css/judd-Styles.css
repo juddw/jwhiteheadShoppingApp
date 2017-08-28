@@ -3,16 +3,26 @@
     height: auto;
     width: 200px;
     position: fixed;
-    padding-left: 10px;
-    background-color: #ededed;
+    background-color: antiquewhite;
+    border-style: solid;
+    border-width: 1px;
+    border-color: brown;
     z-index: 20;
 }
+
+.navHeaderColor {
+    background-color: black;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
 
 .navMenuHeadings {
     font-size: 24px;
     font-family: "Segoe UI",Arial,sans-serif;
     font-weight: 400;
-    margin: 10px 0;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
     .navMenuHeadings a {
@@ -29,12 +39,21 @@
         color: brown;
     }
 
-.paddingRightBttns {
-    padding-right: 20px;
+nav i {
+    cursor: pointer;
+}
 
+#logo {
+    font-size: 24px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    padding-left: 10px;
+    color: white;
+    text-decoration: none;
 }
 
 .myCustomNavItem a {
+    padding: 15px 0px 0px 10px;
     display: block;
     color: black;
     font-size: 14px;
@@ -53,8 +72,10 @@
     width: 30px;
     height: 30px;
     font-size: 25px;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-top: -30px;
     float: right;
+    color: white;
 }
 
     #closeBttn:hover {
@@ -62,9 +83,86 @@
         color: brown;
     }
 
-nav i {
-    cursor: pointer;
+#myBarIcon {
+    font-size: 25px;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
 }
+
+    #myBarIcon:hover, #myCartIcon:hover {
+        cursor: pointer;
+        color: brown;
+    }
+
+
+.mySearchTool {
+  margin-top: 2px;
+  float: right;
+}
+
+.mySearchField {
+    height: 25px;
+    width: 200px;
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+}
+
+#mySearchIcon {
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    font-size: 20px;
+    padding: 2px;
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+    float: right;
+}
+
+    #mySearchIcon:hover {
+        cursor: pointer;
+        color: white;
+        background-color: black;
+    }
+
+
+#myCartIcon {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 20px;
+    display: inline-block;
+    color: black;
+}
+
+    #myCartIcon:hover {
+        color: brown;
+    }
+
+.cartCountStyle {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: black;
+    display: inline-block;
+}
+
+.myRegLoginBttn {
+    list-style: none;
+    margin-right: 0px;
+    padding: 15px;
+    display: block;
+    float: right;
+}
+
+    .myRegLoginBttn:hover {
+        text-decoration: none;
+        background-color: antiquewhite;
+        cursor: pointer;
+    }
 
 #subMenuCollection {
     display: none;
@@ -116,46 +214,21 @@ nav i {
             border-width: 1px;
         }
 
-#myBarIcon {
-    font-size: 25px;
-    margin-left: 20px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
+.addToCartButton {
+    background-color: antiquewhite;
+    color: black;
+    margin-left: 5px;
+    padding: 5px 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: brown;
 }
 
-    #myBarIcon:hover, #myCartIcon:hover, #mySearchIcon:hover {
-        cursor: pointer;
-        color: brown;
+    .addToCartButton:hover {
+        color: white;
+        background-color: brown;
     }
 
-#positionCartSearchIcons {
-    float: right;
-    margin-right: 20px;
-}
-
-#mySearchIcon {
-    font-size: 25px;
-    display: inline-block;
-    margin-right: 50px;
-    width: 100px;
-    border-style: solid;
-    border-width: 0px;
-    border-right-width: 2px;
-}
-
-#myCartIcon {
-    font-size: 25px;
-    margin-left: 10px;
-    display: inline-block;
-}
-
-.cartCountStyle {
-    margin-left: 10px;
-    font-size: 25px;
-    color: black;
-    display: inline-block;
-}
 
 .myIcons {
     font-size: 12px;

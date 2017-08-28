@@ -6,7 +6,8 @@
         <div class="col-sm-12">
             @if (User.IsInRole("Admin"))
             {
-                @Html.ActionLink("Create New Item", "Create")
+                <a href="@Url.Action("Create")" class="addToCartButton">Create New Item</a>
+                @*@Html.ActionLink("Create New Item", "Create")*@
             }
             <p class="itemName" style="color:white; margin-top:20px">8 items</p>
         </div>
@@ -17,10 +18,19 @@
         {
             <div class="well col-md-3 col-sm-4 col-xs-6">
                 <a href="@Url.Action("Details", "Items", new {id = item.Id})">
-                    <img src="@item.MediaURL">
+                    <img src="@Url.Content(item.MediaURL)"> @*Url.Content method gets rid of the ~ from the Url address, ~/assets/images/m4.jpg*@
                 </a>
-                    <p class="itemName">@item.Name</p>
-                    <p class="itemPrice">$@item.Price</p>               
+                <p class="itemName">@item.Name</p>
+                <p class="itemPrice">$@item.Price</p>
+
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("Create", "CartItems", new { itemId = item.Id }, FormMethod.Post, null))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="submit" class="addToCartButton" value="Add to cart" />
+                    }
+                }
             </div>
         }
     </div>

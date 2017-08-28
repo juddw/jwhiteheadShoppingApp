@@ -398,7 +398,9 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
-    <None Include="Views\Items\index.cshtml" />
+    <None Include="Properties\PublishProfiles\jwhitehead-shopping - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\jwhitehead-shopping - Web Deploy.pubxml" />
+    <Content Include="Views\Items\index.cshtml" />
     <Content Include="assets\scripts\ai.0.22.9-build00167.js" />
     <Content Include="assets\scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="assets\scripts\bootstrap.js" />
@@ -490,7 +492,6 @@
     <Content Include="Views\Items\Delete.cshtml" />
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
-    <Content Include="Views\Items\Index2.cshtml" />
     <Content Include="Views\CartItems\Create.cshtml" />
     <Content Include="Views\CartItems\Delete.cshtml" />
     <Content Include="Views\CartItems\Details.cshtml" />
