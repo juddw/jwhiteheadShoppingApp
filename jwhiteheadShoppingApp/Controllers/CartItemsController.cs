@@ -24,19 +24,19 @@ namespace jwhiteheadShoppingApp.Controllers
         }
 
         // GET: CartItems/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            CartItem cartItem = db.CartItems.Find(id);
-            if (cartItem == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cartItem);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    CartItem cartItem = db.CartItems.Find(id);
+        //    if (cartItem == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(cartItem);
+        //}
 
         // GET: CartItems/Create
         //public ActionResult Create()

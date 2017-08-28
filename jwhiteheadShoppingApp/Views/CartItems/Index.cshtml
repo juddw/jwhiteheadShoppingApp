@@ -5,19 +5,17 @@
 }
 
 <h2 style="display: inline-block">Cart Items</h2>
-
-<a href="@Url.Action("Index","OrderItem")" class="myCheckOutBttn">Check Out</a>
+<strong style="margin-left: 30px; color: red; font-size: 16px;"> $ @ViewBag.CartTotalCost</strong>
+<a href="@Url.Action("Create","Orders")" class="myCheckOutBttn">Check Out</a>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
 <table class="table">
     <tr>
+        <th></th>
         <th>
-            @Html.DisplayNameFor(model => model.ItemId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CustomerId)
+            Item
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Count)
@@ -26,17 +24,17 @@
             @Html.DisplayNameFor(model => model.Created)
         </th>
         <th>
-            <p>Modify</p>
+            Modify
         </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ItemId)
+            <img src="@item.Item.MediaURL" style="max-width: 60px" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CustomerId)
+            @Html.DisplayFor(modelItem => item.Item.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Count)
@@ -46,7 +44,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", "Items", new { id=item.Item.Id }, null) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

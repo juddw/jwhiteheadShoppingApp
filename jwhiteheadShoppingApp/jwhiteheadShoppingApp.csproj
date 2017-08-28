@@ -204,7 +204,6 @@
     <Compile Include="Models\CodeFirst\OrderItem.cs" />
     <Compile Include="Models\CodeFirst\Order.cs" />
     <Compile Include="Models\CodeFirst\CartItem.cs" />
-    <Compile Include="Models\Icollection.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Universal.cs" />

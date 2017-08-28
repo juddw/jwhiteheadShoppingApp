@@ -75,16 +75,49 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CustomerId)
+            Customer
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CustomerId)
+            @Html.DisplayFor(model => model.Customer.FullName)
         </dd>
 
     </dl>
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                Item Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Unit Price
+            </th>
+        </tr>
+
+        @foreach (var item in Model.OrderItems)
+        {
+            <tr>
+                <td>
+                    <img src="@item.Item.MediaURL" style="max-width: 60px"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+            </tr>
+        }
+
+    </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
