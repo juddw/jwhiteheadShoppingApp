@@ -6,7 +6,12 @@
 
 <h2 style="display: inline-block">Cart Items</h2>
 <strong style="margin-left: 30px; color: red; font-size: 16px;"> $ @ViewBag.CartTotalCost</strong>
-<a href="@Url.Action("Create","Orders")" class="myCheckOutBttn">Check Out</a>
+@if (ViewBag.CartTotalCost > 0)
+{
+    <a href="@Url.Action("Create","Orders")" class="myCheckOutBttn">Check Out</a>
+}
+
+<a href="@Url.Action("Index","Items")" class="myBttnGray">Continue Shopping</a>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")

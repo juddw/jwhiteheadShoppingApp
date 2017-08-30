@@ -39,7 +39,7 @@
                     <div class="navMenuHeadings">
                         <a href="#">Contact</a>
                         <a href="#">Newsletter</a>
-                        <a href="#">Subscribe</a>
+                        <a href="#" data-toggle="modal" data-target="#myModal">Subscribe</a>
                         <br />
                     </div>
                 </nav>
@@ -152,6 +152,26 @@
         <!--end one big row-->
     </div>
     <!--end container-->
+
+
+    <div id="myModal" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        Please subscribe for vip treatment!
+                        <i class="fa fa-remove" id="modalCloseBttn" data-toggle="modal" data-target="#myModal"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <input type="email" placeholder="Enter your email" />
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="~/assets/scripts/jquery-1.9.1.js"></script>

@@ -2,7 +2,7 @@
 
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { style = "text-decoration: none" }))
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", style = "text-decoration: none" }))
     {
         @Html.AntiForgeryToken()
 
