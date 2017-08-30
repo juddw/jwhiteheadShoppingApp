@@ -8,6 +8,15 @@
 
 <h2>Details</h2>
 
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Create", "CartItems", new { itemId = Model.Id }, FormMethod.Post, null))
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" class="addToCartButton" value="Add to cart" />
+    }
+}
+
 <div>
     <h4>Item</h4>
 
@@ -68,6 +77,9 @@
 <p>
     @if (User.IsInRole("Admin"))
     {
+        <div>
+            @Html.ActionLink("Create", "Create", "Items")
+        </div>
         <div>
             @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
         </div>

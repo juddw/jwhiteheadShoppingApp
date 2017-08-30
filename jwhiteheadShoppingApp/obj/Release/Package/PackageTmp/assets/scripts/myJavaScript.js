@@ -14,3 +14,7 @@ function showSubCollections() {
         subMenuCollection.style.display = "";
     }
 }
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}

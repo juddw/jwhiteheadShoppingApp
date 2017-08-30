@@ -10,139 +10,169 @@
     <link href="~/assets/css/judd-Styles.css" rel="stylesheet" />
 </head>
 <body>
-    <!--side navbar starts-->
-    <nav id="myNav">
-        <div class="navHeaderColor">
-            <i class="fa fa-remove" id="closeBttn" onclick="closeMenu()"></i>
-            <a href="@Url.Action("Index","Home")" id="logo">LOGO</a>
-        </div>
-
-        <div class="myCustomNavItem">
-            <a href="@Url.Action("index","Items")">CFW Series</a>
-            <a href="#">CFAW Series</a>
-            <a href="javascript:void(0);" onclick="showSubCollections()">Collection <i class="fa fa-caret-down"></i></a>
-            <div id="subMenuCollection">
-                <a href="#">2016</a>
-                <a href="#">2015</a>
-                <a href="#">2014</a>
-            </div>
-            <a href="#">Straps</a>
-            <a href="#">Parts</a>
-            <a href="#">Tools</a>
-            <a href="#">Accessories</a>
-        </div>
-        <div class="navMenuHeadings">
-            <a href="#">Contact</a>
-            <a href="#">Newsletter</a>
-            <a href="#">Subscribe</a>
-            <br />
-        </div>
-    </nav>
-    <!--side navbar ends-->
-    <!--start images container-->
-    <div class="container myImageContainer">
+    <!--container starts-->
+    <div class="container minWidthWholeContainer">
+        <!--one big row-->
         <div class="row">
-            <div class="col-xs-2">
-                <div id="myBarIcon" onclick="openMenu()">
-                    <i class="fa fa-bars"></i>
-                </div>
+            <!--side navbar starts-->
+            <div class="col-md-2 col-xs-3 minNavWidth">
+                <nav id="myNav">
+                    <div class="navHeaderColor">
+                        <i class="fa fa-remove" id="closeBttn" onclick="closeMenu()"></i>
+                        <a href="@Url.Action("Index","Home")" id="logo">LOGO</a>
+                    </div>
+
+                    <div class="myCustomNavItem">
+                        <a href="@Url.Action("index","Items")">CFW Series</a>
+                        <a href="#">CFAW Series</a>
+                        <a href="javascript:void(0);" onclick="showSubCollections()">Collection <i class="fa fa-caret-down"></i></a>
+                        <div id="subMenuCollection">
+                            <a href="#">2016</a>
+                            <a href="#">2015</a>
+                            <a href="#">2014</a>
+                        </div>
+                        <a href="#">Straps</a>
+                        <a href="#">Parts</a>
+                        <a href="#">Tools</a>
+                        <a href="#">Accessories</a>
+                    </div>
+                    <div class="navMenuHeadings">
+                        <a href="#">Contact</a>
+                        <a href="#">Newsletter</a>
+                        <a href="#" data-toggle="modal" data-target="#myModal">Subscribe</a>
+                        <br />
+                    </div>
+                </nav>
             </div>
-            <div class="col-xs-10">
-                <div class="mySearchTool">
-                    <div class="mySearchField">
-                        <div id="mySearchIcon"><i class="fa fa-search"></i></div>
+            <!--side navbar ends-->
+            <!--start right column container-->
+            <div class="col-md-9 col-sm-9 col-xs-6 rightMainContainer">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="myBarIcon" onclick="openMenu()">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-10">
+                        <div class="mySearchTool">
+                            <input type="text" class="mySearchField" placeholder="Enter search item" />
+                            <div id="mySearchIcon"><i class="fa fa-search"></i></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-4">
-                <a href="@Url.Action("Index","CartItems")">
-                    <i class="fa fa-shopping-cart" id="myCartIcon"></i>
-                </a>
-                <div class="cartCountStyle">
-                    @if (Request.IsAuthenticated)
-                    {
-                        @ViewBag.CartItems.Count <span>items</span>
-                    }
+                <div class="row">
+                    <div class="col-xs-4">
+                        <a href="@Url.Action("Index","CartItems")">
+                            <i class="fa fa-shopping-cart" id="myCartIcon"></i>
+                        </a>
+                        <div class="cartCountStyle">
+                            @if (Request.IsAuthenticated)
+                            {
+                                @ViewBag.TotalCartItems <span>items</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        @Html.Partial("_LoginPartial") @*displays login and log off cshtml page on top of*@
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-8">
-                @Html.Partial("_LoginPartial") @*displays login and log off cshtml page on top of*@
-            </div>
-        </div>
 
-        @RenderBody()
-        <!--start subscribe block-->
-        <div class="subscribeBlock">
-            <h1>Subscribe</h1>
-            <p>To get special offers and <span style="color:red">VIP</span> treatment:</p>
-            <input placeholder="Enter email" />
-            <button>Subscribe</button>
-        </div>
-        <!--end subscribe block-->
-        <!--start contact info-->
-        <div class="row contactBlock">
-            <div class="col-sm-4 col-xs-12 contact">
-                <h4>Contact</h4>
-                <p>Questions? Go ahead.</p>
-                <input placeholder="Name" />
-                <input placeholder="Email" />
-                <input placeholder="Subject" />
-                <input placeholder="Message" />
-                <button>Send</button>
-            </div>
-            <div class="col-sm-4 col-xs-6">
-                <div class="about">
-                    <h4>About</h4>
-                    <p><a href="#">About us</a></p>
-                    <p><a href="#">We're hiring</a></p>
-                    <p><a href="#">Support</a></p>
-                    <p><a href="#">Find store</a></p>
-                    <p><a href="#">Shipment</a></p>
-                    <p><a href="#">Payment</a></p>
-                    <p><a href="#">Gift card</a></p>
-                    <p><a href="#">Return</a></p>
-                    <p><a href="#">Help</a></p>
+                @RenderBody()
+                <!--start subscribe block-->
+                <div class="row subscribeBlock">
+                    <div class="col-xs-12">
+                        <h1>Subscribe</h1>
+                        <p>To get special offers and <span style="color:red">VIP</span> treatment:</p>
+                        <input placeholder="Enter email" />
+                        <button>Subscribe</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-4 col-xs-6">
-                <div class="store">
-                    <h4>Store</h4>
-                    <p><i class="fa fa-map-marker myIcons"></i>&nbsp;&nbsp;Company Name</p>
-                    <p><i class="fa fa-phone myIcons"></i>&nbsp;&nbsp;0044123123</p>
-                    <p><i class="fa fa-envelope myIcons"></i>&nbsp;&nbsp;myemail@email.com</p>
-                    <br />
-                    <h4>We accept</h4>
-                    <p><i class="fa fa-cc-amex myIcons"></i>&nbsp;&nbsp;Amex</p>
-                    <p><i class="fa fa-credit-card myIcons"></i>&nbsp;&nbsp;Credit Card</p>
-                    <i class="fa fa-facebook-official mySocialIcons"></i>
-                    <i class="fa fa-instagram mySocialIcons"></i>
-                    <i class="fa fa-snapchat mySocialIcons"></i>
-                    <i class="fa fa-pinterest mySocialIcons"></i>
-                    <i class="fa fa-twitter mySocialIcons"></i>
-                    <i class="fa fa-linkedin mySocialIcons"></i>
+                <!--end subscribe block-->
+                <!--start contact info-->
+                <div class="row contactBlock">
+                    <div class="col-md-4 col-sm-12 col-xs-12 contact">
+                        <h4>Contact</h4>
+                        <p>Questions? Go ahead.</p>
+                        <input placeholder="Name" />
+                        <input placeholder="Email" />
+                        <input placeholder="Subject" />
+                        <input placeholder="Message" />
+                        <button>Send</button>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+                        <div class="about">
+                            <h4>About</h4>
+                            <p><a href="#">About us</a></p>
+                            <p><a href="#">We're hiring</a></p>
+                            <p><a href="#">Support</a></p>
+                            <p><a href="#">Find store</a></p>
+                            <p><a href="#">Shipment</a></p>
+                            <p><a href="#">Payment</a></p>
+                            <p><a href="#">Gift card</a></p>
+                            <p><a href="#">Return</a></p>
+                            <p><a href="#">Help</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+                        <div class="store">
+                            <h4>Store</h4>
+                            <p><i class="fa fa-map-marker myIcons"></i>&nbsp;&nbsp;Company Name</p>
+                            <p><i class="fa fa-phone myIcons"></i>&nbsp;&nbsp;0044123123</p>
+                            <p><i class="fa fa-envelope myIcons"></i>&nbsp;&nbsp;myemail@email.com</p>
+                            <br />
+                            <h4>We accept</h4>
+                            <p><i class="fa fa-cc-amex myIcons"></i>&nbsp;&nbsp;Amex</p>
+                            <p><i class="fa fa-credit-card myIcons"></i>&nbsp;&nbsp;Credit Card</p>
+                            <i class="fa fa-facebook-official mySocialIcons"></i>
+                            <i class="fa fa-instagram mySocialIcons"></i>
+                            <i class="fa fa-snapchat mySocialIcons"></i>
+                            <i class="fa fa-pinterest mySocialIcons"></i>
+                            <i class="fa fa-twitter mySocialIcons"></i>
+                            <i class="fa fa-linkedin mySocialIcons"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!--end contact info-->
-        <!--footer starts-->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <footer>
-                        <center>
-                            <div>
-                                <p id="footer">Powered by <a href="https://www.coderfoundry.com">CoderFoundry</a> &copy;Copyright CoderFoundery</p>
-                            </div>
-                        </center>
-                    </footer>
+                <!--end contact info-->
+                <!--footer starts-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <footer>
+                            <center>
+                                <div>
+                                    <p id="footer">Powered by <a href="https://www.coderfoundry.com">CoderFoundry</a> &copy;Copyright CoderFoundery</p>
+                                </div>
+                            </center>
+                        </footer>
+                    </div>
                 </div>
+                <!--footer ends-->
             </div>
+            <!--end right column container-->
         </div>
-        <!--footer ends-->
+        <!--end one big row-->
     </div>
-    <!--end images container-->
+    <!--end container-->
+
+
+    <div id="myModal" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        Please subscribe for vip treatment!
+                        <i class="fa fa-remove" id="modalCloseBttn" data-toggle="modal" data-target="#myModal"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <input type="email" placeholder="Enter your email" />
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="~/assets/scripts/jquery-1.9.1.js"></script>
     <script src="~/assets/scripts/myJavaScript.js"></script>

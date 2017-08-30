@@ -4,10 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 style="display: inline-block">Confirm Order</h2>
+<a href="@Url.Action("Confirm","Orders", new { total = ViewBag.CartTotalCost })" class="myCheckOutBttn">Confirm</a>
+<a href="@Url.Action("Delete","Orders", new { id = Model.Id } )" class="myBttnGray">Delete Order</a>
 
 <div>
-    <h4>Order</h4>
+    <h4>Order Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -75,16 +77,52 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CustomerId)
+            Customer
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CustomerId)
+            @Html.DisplayFor(model => model.Customer.FullName)
         </dd>
 
     </dl>
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                Item
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Unit Price
+            </th>
+        </tr>
+
+        @foreach (var item in Model.OrderItems)
+        {
+            <tr>
+                <td>
+                    <img src="@item.Item.MediaURL" style="max-width: 60px"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                @*<td>
+                    @Html.ActionLink("Details", "Details", "Items", new { id = item.ItemId }, null)
+                </td>*@
+            </tr>
+        }
+
+    </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
