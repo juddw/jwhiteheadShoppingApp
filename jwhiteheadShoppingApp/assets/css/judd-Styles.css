@@ -43,6 +43,10 @@
         .navMenuHeadings a:hover {
             text-decoration: none;
         }
+
+        .navMenuHeadings a:focus {
+            outline-style: none;
+        }
     /*only affects immediate children of this class*/
     .navMenuHeadings > a:hover {
         color: brown;
@@ -212,8 +216,8 @@ nav i {
 
 .myBttnGray {
     display: inline-block;
-    background-color: gainsboro;
-    color: black;
+    background-color: black;
+    color: white;
     margin-left: 5px;
     margin-right: 10px;
     margin-top: 15px;
@@ -227,8 +231,8 @@ nav i {
 
     .myBttnGray:hover {
         text-decoration: none;
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
     }
 
 
@@ -269,7 +273,7 @@ nav i {
         }
 
 .surroundSmallImagesBox {
-    min-width: 400px;
+    min-width: 370px;
     border-style: solid;
     border-width: 0px;
     border-top-width: 2px;
@@ -297,6 +301,26 @@ nav i {
             border-width: 1px;
         }
 
+.styleCenterMediaBox {
+    min-width: 370px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #f3f3f3;
+}
+
+.styleCartItemsViewBox {
+    min-width: 370px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: white;
+}
+
 .addToCartButton {
     background-color: antiquewhite;
     color: black;
@@ -312,6 +336,9 @@ nav i {
         background-color: brown;
     }
 
+.hrLine {
+    border-color: black !important;
+}
 
 .myIcons {
     font-size: 12px;

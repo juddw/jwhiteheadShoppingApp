@@ -507,6 +507,7 @@
     <Content Include="Views\OrderItems\Edit.cshtml" />
     <Content Include="Views\OrderItems\Index.cshtml" />
     <Content Include="Views\Orders\Confirm.cshtml" />
+    <Content Include="Views\Items\SearchResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

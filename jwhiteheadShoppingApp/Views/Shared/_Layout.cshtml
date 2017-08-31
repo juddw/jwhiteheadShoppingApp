@@ -55,8 +55,11 @@
                     </div>
                     <div class="col-xs-10">
                         <div class="mySearchTool">
-                            <input type="text" class="mySearchField" placeholder="Enter search item" />
+                            @using (Html.BeginForm("SearchResults", "Items", FormMethod.Post))
+                            {
+                            <input type="text" class="mySearchField" name="searchitem" id="searchitem" placeholder="Enter search item" />
                             <div id="mySearchIcon"><i class="fa fa-search"></i></div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -153,7 +156,7 @@
     </div>
     <!--end container-->
 
-
+    <!--subscribe modal-->
     <div id="myModal" class="modal fade" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -172,6 +175,7 @@
             </div>
         </div>
     </div>
+    <!--end subscribe modal-->
 
 
     <script src="~/assets/scripts/jquery-1.9.1.js"></script>

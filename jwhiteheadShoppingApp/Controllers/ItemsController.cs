@@ -22,6 +22,12 @@ namespace jwhiteheadShoppingApp.Controllers
             return View(itemsData); // sending list to the view
         }
 
+        // GET: Items
+        public ActionResult SearchResults(string searchitem)
+        {
+            return View(db.Items.Where(i => i.Name.Contains(searchitem) || i.Description.Contains(searchitem)).ToList());
+        }
+
         // GET: Items/Details/5
         public ActionResult Details(int? id)
         {
