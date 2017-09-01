@@ -4,13 +4,15 @@
     ViewBag.Title = "Confirm";
 }
 
-<h2 style="display: inline-block">Thank you for your order!</h2>
+<div class="styleCenterMediaBox" style="background-color: lightyellow">
+    <h2 style="display: inline-block">Thank you for your order!</h2>
 
-<div>
-    <h4>Your order has been submitted.</h4>
-    <hr />
+    <div>
+        <h4>Your order has been submitted.</h4>
+        <hr class="hrLine"/>
+    </div>
+
+    <p>
+        @Html.ActionLink("Continue Shopping", "Index", "Items")
+    </p>
 </div>
-
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
