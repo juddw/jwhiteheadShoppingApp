@@ -23,9 +23,9 @@ namespace jwhiteheadShoppingApp.Controllers
         }
 
         // GET: Items
-        public ActionResult SearchResults(string searchitem)
+        public ActionResult SearchResults(string searchItem)
         {
-            return View(db.Items.Where(i => i.Name.Contains(searchitem) || i.Description.Contains(searchitem)).ToList());
+            return View(db.Items.Where(i => i.Name.Contains(searchItem) || i.Description.Contains(searchItem)).ToList());
         }
 
         // GET: Items/Details/5

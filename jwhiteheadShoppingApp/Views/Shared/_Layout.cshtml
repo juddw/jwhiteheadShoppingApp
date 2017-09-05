@@ -37,9 +37,9 @@
                         <a href="#">Accessories</a>
                     </div>
                     <div class="navMenuHeadings">
-                        <a href="#">Contact</a>
+                        <a href="#" data-toggle="modal" data-target="#myContactModal">Contact</a>
                         <a href="#">Newsletter</a>
-                        <a href="#" data-toggle="modal" data-target="#myModal">Subscribe</a>
+                        <a href="#" data-toggle="modal" data-target="#mySubscribeModal">Subscribe</a>
                         <br />
                     </div>
                 </nav>
@@ -57,8 +57,10 @@
                         <div class="mySearchTool">
                             @using (Html.BeginForm("SearchResults", "Items", FormMethod.Post))
                             {
-                            <input type="text" class="mySearchField" name="searchitem" id="searchitem" placeholder="Enter search item" />
-                            <div id="mySearchIcon"><i class="fa fa-search"></i></div>
+                                <input type="text" class="mySearchField" name="searchItem" placeholder="Search" />
+                                <button id="mySearchIcon" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             }
                         </div>
                     </div>
@@ -155,15 +157,14 @@
         <!--end one big row-->
     </div>
     <!--end container-->
-
     <!--subscribe modal-->
-    <div id="myModal" class="modal fade" role="dialog" aria-hidden="true">
+    <div id="mySubscribeModal" class="modal fade" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title">
-                        Please subscribe for vip treatment!
-                        <i class="fa fa-remove" id="modalCloseBttn" data-toggle="modal" data-target="#myModal"></i>
+                        Please subscribe for <span style="color:red">VIP</span> treatment!
+                        <i class="fa fa-remove" id="modalCloseBttn" data-toggle="modal" data-target="#mySubscribeModal"></i>
                     </div>
                 </div>
                 <div class="modal-body">
@@ -176,6 +177,23 @@
         </div>
     </div>
     <!--end subscribe modal-->
+    <!--contact modal-->
+    <div id="myContactModal" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.865227971588!2d-80.07436658495372!3d36.096773214677704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88530739101f5817%3A0x64583b7d90957128!2sCoder+Foundry!5e0!3m2!1sen!2sus!4v1504579930548" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <i class="fa fa-remove" id="modalCloseBttn" data-toggle="modal" data-target="#myContactModal"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    Thank you for contacting us. Please click <span style="color: blue;">"Directions"</span> on Google Maps to find the best way to reach us.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end contact modal-->
 
 
     <script src="~/assets/scripts/jquery-1.9.1.js"></script>

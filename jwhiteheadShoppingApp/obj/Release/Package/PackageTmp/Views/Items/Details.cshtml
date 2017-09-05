@@ -21,7 +21,7 @@
     <div>
         <h4>Item</h4>
 
-        <hr class="hrLine"/>
+        <hr class="hrLine" />
 
 
         <div style="float: left;">
@@ -33,22 +33,24 @@
                     @Html.DisplayNameFor(model => model.MediaURL)
                 </dt>*@
 
- 
-            <dt>
-                @Html.DisplayNameFor(model => model.CreationDate)
-            </dt>
+            @if (Request.IsAuthenticated)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.CreationDate)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.CreationDate)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.UpdatedDate)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.UpdatedDate)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.UpdatedDate)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.UpdatedDate)
+                </dd>
+            }
 
             <dt>
                 @Html.DisplayNameFor(model => model.Name)

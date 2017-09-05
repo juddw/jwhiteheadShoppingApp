@@ -4,12 +4,12 @@
     ViewBag.Title = "Details";
 }
 <div class="styleCenterMediaBox ">
-    <h2 style="display: inline-block">Confirm Order</h2>
-    <a href="@Url.Action("Confirm","Orders", new { total = ViewBag.CartTotalCost })" class="myCheckOutBttn">Confirm</a>
-    <a href="@Url.Action("Delete","Orders", new { id = Model.Id } )" class="myBttnGray">Delete Order</a>
+    <h2 style="display: inline-block">Order Details</h2>
+    <a href="@Url.Action("Index","Orders")" class="myBttnGray">Back To List</a>
+    @*<a href="@Url.Action("Confirm","Orders", new { total = ViewBag.CartTotalCost })" class="myCheckOutBttn">Confirm</a>*@
 
     <div>
-        <h4>Order Details</h4>
+        <h4>Itemized</h4>
         <hr class="hrLine" />
         <dl class="dl-horizontal">
             <dt>

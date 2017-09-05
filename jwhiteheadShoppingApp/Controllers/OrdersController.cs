@@ -35,6 +35,13 @@ namespace jwhiteheadShoppingApp.Controllers
             {
                 return HttpNotFound();
             }
+            // don't allow someone else to access order details if it's not their order.
+            var user = db.Users.Find(User.Identity.GetUserId());
+            if (order.CustomerId != user.Id)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             return View(order);
         }
 
@@ -108,31 +115,31 @@ namespace jwhiteheadShoppingApp.Controllers
         //    return View(order);
         //}
 
-        //GET: Orders/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Order order = db.Orders.Find(id);
-            if (order == null)
-            {
-                return HttpNotFound();
-            }
-            return View(order);
-        }
+        ////GET: Orders/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Order order = db.Orders.Find(id);
+        //    if (order == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(order);
+        //}
 
-        //POST: Orders/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Order order = db.Orders.Find(id);
-            db.Orders.Remove(order);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        ////POST: Orders/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    Order order = db.Orders.Find(id);
+        //    db.Orders.Remove(order);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {
