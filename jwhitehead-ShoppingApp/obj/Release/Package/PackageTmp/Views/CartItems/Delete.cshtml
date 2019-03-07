@@ -1,0 +1,61 @@
+﻿@model jwhiteheadShoppingApp.Models.CodeFirst.CartItem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="styleCenterMediaBox">
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Cart Item</h4>
+        <hr class="hrLine"/>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ItemId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ItemId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CustomerId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Count)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Created)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Created)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a href="@Url.Action("Index", "CartItems")">
+                    <input type="text" value="Keep" class="btn btn-success" />
+                </a>
+            </div>
+        }
+    </div>
+</div>

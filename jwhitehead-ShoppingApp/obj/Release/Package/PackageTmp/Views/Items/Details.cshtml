@@ -1,0 +1,97 @@
+﻿@model jwhiteheadShoppingApp.Models.CodeFirst.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@*style with css for this details page. An image.*@
+
+<div class="styleCartItemsViewBox">
+    <h2 style="display: inline-block;">Details</h2>
+
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("Create", "CartItems", new { itemId = Model.Id }, FormMethod.Post, null))
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" class="addToCartButton" value="Add to cart" style="display: inline-block; float: right;" />
+        }
+    }
+
+    <div>
+        <h4>Item</h4>
+
+        <hr class="hrLine" />
+
+
+        <div style="float: left;">
+            <img src="@Model.MediaURL" />
+        </div>
+
+        <dl class="dl-horizontal" style="float: left;">
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.MediaURL)
+                </dt>*@
+
+            @if (Request.IsAuthenticated)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreationDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UpdatedDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UpdatedDate)
+                </dd>
+            }
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.Raw(Model.Description)
+            </dd>
+
+        </dl>
+    </div>
+
+    <p style="clear: left;">
+        @if (User.IsInRole("Admin"))
+        {
+            <div>
+                @Html.ActionLink("Create", "Create", "Items")
+            </div>
+            <div>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+            </div>
+            <div>
+                @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+            </div>
+        }
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

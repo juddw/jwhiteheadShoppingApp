@@ -1,0 +1,532 @@
+﻿.minWidthWholeContainer {
+    min-width: 700px;
+}
+
+.minNavWidth {
+    min-width: 200px;
+}
+
+.rightMainContainer {
+    min-width: 400px;
+    margin-left: -20px;
+}
+
+#myNav {
+    overflow: auto;
+    height: auto;
+    background-color: antiquewhite;
+    border-style: solid;
+    border-width: 1px;
+    border-color: brown;
+}
+
+.navHeaderColor {
+    background-color: black;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+.navMenuHeadings {
+    font-size: 24px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+    .navMenuHeadings a {
+        display: block;
+        text-decoration: none;
+        color: black;
+    }
+
+        .navMenuHeadings a:hover {
+            text-decoration: none;
+        }
+
+        .navMenuHeadings a:focus {
+            outline-style: none;
+        }
+    /*only affects immediate children of this class*/
+    .navMenuHeadings > a:hover {
+        color: brown;
+    }
+
+nav i {
+    cursor: pointer;
+}
+
+#logo {
+    font-size: 24px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    padding-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.myCustomNavItem a {
+    padding: 15px 0px 0px 10px;
+    display: block;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .myCustomNavItem a:hover {
+        background-color: brown;
+        color: white;
+        text-decoration: none;
+    }
+
+#closeBttn {
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-top: -30px;
+    float: right;
+    color: white;
+}
+
+    #closeBttn:hover {
+        cursor: pointer;
+        color: brown;
+    }
+
+
+#modalCloseBttn {
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-top: 5px;
+    float: right;
+    color: black;
+}
+
+    #modalCloseBttn:hover {
+        cursor: pointer;
+        color: brown;
+    }
+
+
+#myBarIcon {
+    font-size: 25px;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+    #myBarIcon:hover, #myCartIcon:hover {
+        cursor: pointer;
+        color: brown;
+    }
+
+.mySearchTool {
+    margin-top: 2px;
+    float: right;
+}
+
+.mySearchField {
+    height: 25px;
+    width: 200px;
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+}
+
+#mySearchIcon {
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    font-size: 20px;
+    padding: 2px;
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+    float: right;
+}
+
+    #mySearchIcon:hover {
+        cursor: pointer;
+        color: white;
+        background-color: black;
+    }
+
+
+#myCartIcon {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 20px;
+    display: inline-block;
+    color: black;
+}
+
+    #myCartIcon:hover {
+        color: brown;
+    }
+
+.cartCountStyle {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: black;
+    display: inline-block;
+}
+
+.myRegLoginBttn {
+    list-style: none;
+    margin-right: 0px;
+    padding: 15px;
+    display: block;
+    float: right;
+}
+
+    .myRegLoginBttn:hover {
+        cursor: pointer;
+        color: brown;
+    }
+
+.myCheckOutBttn {
+    text-decoration: none;
+    display: inline-block;
+    background-color: brown;
+    color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 15px;
+    padding: 8px 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: brown;
+    float: right;
+}
+
+    .myCheckOutBttn:hover {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+    }
+
+.myBttnGray {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 15px;
+    padding: 8px 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: black;
+    float: right;
+}
+
+    .myBttnGray:hover {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+    }
+
+
+.myCustomBttn {
+    display: inline-block;
+    background-color: brown;
+    color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 8px 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: brown;
+    float: right;
+}
+
+    .myCustomBttn:hover {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+    }
+
+#subMenuCollection {
+    display: none;
+    margin-left: 15px;
+}
+
+    #subMenuCollection a {
+        color: brown;
+    }
+
+        #subMenuCollection a:hover {
+            background-color: grey;
+            color: white;
+            text-decoration: none;
+        }
+
+.surroundSmallImagesBox {
+    min-width: 370px;
+    border-style: solid;
+    border-width: 0px;
+    border-top-width: 2px;
+    border-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: black;
+}
+
+    .surroundSmallImagesBox img {
+        cursor: pointer;
+    }
+
+    .surroundSmallImagesBox img {
+        border-style: solid;
+        border-color: white;
+        border-width: 6px;
+    }
+
+        .surroundSmallImagesBox img:hover {
+            background-color: brown;
+            padding: 5px;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+        }
+
+.styleCenterMediaBox {
+    min-width: 370px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #f3f3f3;
+}
+
+.styleCartItemsViewBox {
+    min-width: 370px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: white;
+}
+
+.addToCartButton {
+    background-color: antiquewhite;
+    color: black;
+    margin-left: 5px;
+    padding: 5px 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: brown;
+}
+
+    .addToCartButton:hover {
+        color: white;
+        background-color: brown;
+    }
+
+.hrLine {
+    border-color: black !important;
+}
+
+.myIcons {
+    font-size: 12px;
+}
+
+.mySocialIcons {
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 0px;
+}
+
+.itemName {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding-left: 5px;
+}
+
+.itemPrice {
+    font-size: 14px;
+    font-weight: bold;
+    color: grey;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.containHookTags {
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    z-index: 10;
+}
+
+#hookMessage {
+    font-size: 48px;
+    font-family: Arial, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+#hookMessageSub {
+    font-size: 20px;
+    font-family: Arial, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 40px;
+}
+
+#shopNowButton {
+    font-size: 14px;
+    font-family: Arial, Geneva, Tahoma, sans-serif;
+    background-color: brown;
+    border-style: none;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+    #shopNowButton:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+.subscribeBlock {
+    background-color: black;
+    color: white;
+    padding: 10px 20px 20px 20px;
+    height: 250px;
+    width: 100%;
+    /* removes BootStrap styling*/
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+    .subscribeBlock input {
+        padding: 5px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .subscribeBlock p {
+        padding-top: 10px;
+    }
+
+    .subscribeBlock button {
+        font-family: Arial;
+        background-color: red;
+        display: block;
+        border-style: none;
+        padding: 10px;
+        color: white;
+        width: 100px;
+    }
+
+        .subscribeBlock button:hover {
+            background-color: antiquewhite;
+            color: red;
+            cursor: pointer;
+        }
+
+.container .contactBlock {
+    margin-left: 0px;
+}
+
+.removeBootStrapStyling {
+    padding-left: 0px;
+}
+
+.contactBlock {
+    background-color: #d5d5d5;
+    padding: 50px 10px 20px 10px;
+    color: black;
+    width: 100%;
+}
+
+    .contactBlock h4 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+.contact p {
+    font-size: 12px;
+}
+
+.contact {
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .contact input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .contact button {
+        font-family: Arial;
+        display: block;
+        border-style: none;
+        margin-top: 10px;
+        padding: 5px 20px 5px 20px;
+        background-color: black;
+        color: white;
+        width: 100%;
+    }
+
+        .contact button:hover {
+            color: white;
+            background-color: #3d3d3d;
+        }
+
+.about {
+    width: 100%;
+    padding-left: 40%;
+    text-align: left;
+}
+
+    .about a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    .about p {
+        font-size: 12px;
+    }
+
+    .about a:hover {
+        color: brown;
+    }
+
+.store {
+    width: 100%;
+    padding-left: 10%;
+    text-align: left;
+}
+
+    .store p {
+        font-size: 12px;
+    }
+
+#footer {
+    margin-top: 50px;
+}

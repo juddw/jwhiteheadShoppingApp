@@ -1,0 +1,60 @@
+﻿@model IEnumerable<jwhiteheadShoppingApp.Models.CodeFirst.CartItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="styleCartItemsViewBox">
+    <h2 style="display: inline-block">Cart Items</h2>
+    <strong style="margin-left: 30px; color: red; font-size: 16px;"> $ @ViewBag.CartTotalCost</strong>
+    @if (ViewBag.CartTotalCost > 0)
+    {
+        <a href="@Url.Action("Create","Orders")" class="myCheckOutBttn">Check Out</a>
+    }
+
+    <a href="@Url.Action("Index","Items")" class="myBttnGray">Continue Shopping</a>
+
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                Item
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created)
+            </th>
+            <th>
+                Modify
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.Item.MediaURL" style="max-width: 60px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Count)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", "Items", new { id = item.Item.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
